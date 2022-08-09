@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TODO App</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <h4>STUDENT REGISTRATION</h4>
+        <div id="addNew">
+            <span>Add your details  </span>
+            <i class="fa fa-plus"></i>
+        </div>
+        <h4 >Collected Data</h4>
+        <div id="tasks">
+           <!-- <div>
+                <span>Task 1</span>
+                <p>name</p>
+                <p>phone number</p>
+                <span class="options">
+                    <i onclick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
+                    <i onclick="deleteForm(this)" class="fa-solid fa-trash-can"></i>
+                </span>
+            </div>
+            <div>
+                <span><b>Task 2</b></span>
+               <p>name</p>
+                <p>phone number</p>
+                <span class="options">
+                    <i onclick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
+                    <i onclick="deleteForm(this)" class="fa-solid fa-trash-can"></i>
+                </span>
+            </div>-->
+        </div>
+        <div class="centeralign">
+        <div class="pop">
+            <div class="pop1">
+               <div class="header">
+                   <h4>Enter The Student Details</h4>
+                   <p class="close">+</p>
+                </div>
+                <form id="form">
+                <div class="contents">
+                    <input type="text" placeholder="Enter Name" id="textInput" autofocus>
+                    <input type="text" placeholder="Enter phone Number" id="phoneInput">
+                    <input type="text" placeholder="Enter Email-id" id="mailInput">
+                    <div id="msg"></div>
+                </div>
+                <div class="footer">
+                    <button type="submit" id="submit" onblur="formvalidate()" onsubmit="formvalidate()" onclick= "formvalidate()" class="button">Submit</button>
+                </div>
+            </form>
+          </div>
+            </div>
+          </div>
+        </div>
+          <script src="pop.js"></script>    
+</body>
+</html>
