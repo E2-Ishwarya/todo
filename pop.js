@@ -56,9 +56,9 @@ let createTasks=function()
     {
       return (tasks.innerHTML+=`
       <div id=${y}>
-      <span>${x.name}</span>
-      <p>${x.phone}</p>
-      <p>${x.mail}</p>
+      <span>Name:${x.name}</span>
+      <p>phone number:${x.phone}</p>
+      <p>mail id:${x.mail}</p>
       <span class="options">
           <i onclick="editTask(this)"class="fa-solid fa-pen-to-square"></i>
           <i onclick="deleteForm(this);createTasks()"  class="fa-solid fa-trash-can"></i>
