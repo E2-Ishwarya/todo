@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -8,54 +9,61 @@
 </head>
 <body>
     <div class="app">
-        <h4>STUDENT REGISTRATION</h4>
+        <h4>Student Details</h4>
         <div id="addNew">
-            <span>Add your details  </span>
+            <span>Add Names</span>
             <i class="fa fa-plus"></i>
         </div>
-        <h4 >Collected Data</h4>
+        <h4 >your details</h4>
+        <div class="v">
+        <div class="det">
+           <P>Entered Name</P> 
+           <p> Entered Phone number</p>
+            <p>Entered Mail Id</p>
+        </div>
+        <div class="e">
+            <P>Edit</P>
+            <P>Delete</P>
+        </div>
+    </div>
         <div id="tasks">
            <!-- <div>
-                <span>Task 1</span>
-                <p>name</p>
-                <p>phone number</p>
+                <span>Task 1</span> <p>name</p>   <p>phone number</p>
                 <span class="options">
                     <i onclick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
                     <i onclick="deleteForm(this)" class="fa-solid fa-trash-can"></i>
                 </span>
             </div>
             <div>
-                <span><b>Task 2</b></span>
-               <p>name</p>
-                <p>phone number</p>
+                 <span>Task 2</span> <p>name</p>   <p>phone number</p>
                 <span class="options">
                     <i onclick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
                     <i onclick="deleteForm(this)" class="fa-solid fa-trash-can"></i>
                 </span>
             </div>-->
         </div>
-        <div class="centeralign">
         <div class="pop">
             <div class="pop1">
                <div class="header">
-                   <h4>Enter The Student Details</h4>
+                   <h3>Please Enter The Fields</h3>
                    <p class="close">+</p>
                 </div>
                 <form id="form">
                 <div class="contents">
-                    <input type="text" placeholder="Enter Name" id="textInput" autofocus>
+                    <input type="text" placeholder="Enter Name" id="textInput">
                     <input type="text" placeholder="Enter phone Number" id="phoneInput">
                     <input type="text" placeholder="Enter Email-id" id="mailInput">
                     <div id="msg"></div>
                 </div>
                 <div class="footer">
-                    <button type="submit" id="submit" onblur="formvalidate()" onsubmit="formvalidate()" onclick= "formvalidate()" class="button">Submit</button>
+                    <button type="submit" id="submit" onsubmit="formvalidate()"onclick="formvalidate()" onkeyup="formvalidate()" onblur="formvalidate()" class="button">Submit</button>
                 </div>
             </form>
           </div>
             </div>
           </div>
-        </div>
-          <script src="pop.js"></script>    
+          <script src="pop1.js"></script>
+          
+        
 </body>
 </html>
