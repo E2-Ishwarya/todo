@@ -56,6 +56,78 @@ let createTasks=function()
     {
       return (tasks.innerHTML+=`
       <div id=${y}>
+      <div class=x>
+      <span>${x.name}</span>
+       <p>${x.phone}</p>
+       <p>${x.mail}</p>
+      <span class="options">
+          <i onclick="editTask(this)"class="fa-solid fa-pen-to-square"></i>
+          <i onclick="deleteForm(this);createTasks()"  class="fa-solid fa-trash-can"></i>
+      </span>
+      </div>
+    </div>
+    `);
+    });
+ resetForm();
+};
+let deleteForm=function(e)
+{ 
+    var ans=confirm("Are you sure to delete this!")
+    if(ans==true)
+    {
+   e.parentElement.parentElement.remove();
+   data.splice(e.parentElement.parentElement.id,1);
+   localStorage.setItem("data",JSON.stringify(data));
+   console.log(data);
+    }
+}
+let editTask=function(e)
+{
+  let selectedTask=e.parentElement.parentElement;
+  textInput.value=selectedTask.children[0].innerHTML;
+  phoneInput.value=selectedTask.children[1].innerHTML;
+  mailInput.value=selectedTask.children[2].innerHTML;
+  document.querySelector('.pop').style.display="flex";
+   deleteForm(e);
+   // selectedTask.remove();
+}
+let resetForm=function()
+{
+    textInput.value="";
+    phoneInput.value="";
+    mailInput.value="";
+};
+//immediate invoke functional expression
+(()=>
+    {
+    data=JSON.parse(localStorage.getItem("data")) || [];
+    console.log(data);
+    createTasks();
+    }
+)();
+
+
+let data=[];
+let acceptData= function()
+{
+    data.push(
+        {
+        name: textInput.value,
+        phone: phoneInput.value,
+        mail: mailInput.value,
+    });
+    localStorage.setItem("data",JSON.stringify(data)) ;
+    console.log(data);
+    createTasks();
+};  
+let createTasks=function()
+{
+    tasks.innerHTML="";
+    //x-obj y-index 
+    data.map( (x,y) =>
+    {
+      return (tasks.innerHTML+=`
+      <div id=${y}>
       <span>Name:${x.name}</span>
       <p>phone number:${x.phone}</p>
       <p>mail id:${x.mail}</p>
