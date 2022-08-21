@@ -1,6 +1,7 @@
 document.getElementById('addNew').addEventListener('click',function()
 {
  document.querySelector('.pop').style.display="flex";
+ resetForm();
 });
 
 document.querySelector('.close').addEventListener('click',function()
@@ -81,6 +82,12 @@ let deleteForm=function(e)
    console.log(data);
     }
 }
+let deleteTask=function(e)
+{ 
+   data.splice(e.parentElement.parentElement.id,1  );
+   localStorage.setItem("data",JSON.stringify(data));
+   console.log(data);
+}
 let editTask=function(e)
 {
   let selectedTask=e.parentElement.parentElement;
@@ -88,8 +95,12 @@ let editTask=function(e)
   phoneInput.value=selectedTask.children[1].innerHTML;
   mailInput.value=selectedTask.children[2].innerHTML;
   document.querySelector('.pop').style.display="flex";
-   deleteForm(e);
-   // selectedTask.remove();
+   deleteTask(e);
+   selectedTask.id.remove();
+   document.querySelector('.close').addEventListener('click',function()
+  {
+    document.querySelector('.pop').style.display="none";
+  } );
 }
 let resetForm=function()
 {
@@ -97,6 +108,7 @@ let resetForm=function()
     phoneInput.value="";
     mailInput.value="";
 };
+
 //immediate invoke functional expression
 (()=>
     {
